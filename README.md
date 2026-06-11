@@ -34,6 +34,8 @@ In remote mountain areas there is no cellular coverage, and existing safety tool
 | **Heard Node** (`dispositivo_figlio`) | Adult hiker               | Follows the route, answers polls, relays messages              |
 | **Heard Pico** (concept)              | Child / beginner          | Button-sized: send distress, receive alerts                    |
 
+> **Prototype status:** the group protocol (`ConnectionManager`) is shared code that implements *both* roles — Core or Node is selected by the device ID it is constructed with. In field tests the Node device ran this shared firmware with a different ID; `dispositivo_figlio/` itself currently contains only a minimal LoRa receiver sketch. A standalone Node build (protocol + GPS + path check, no display) is an open milestone.
+
 ### LoRa protocol (3 message types)
 
 ```
@@ -75,7 +77,7 @@ See [`code/simulator/README.md`](code/simulator/README.md) for the full document
 ```
 code/
 ├── dispositivo_madre/    Heard Core firmware   (PlatformIO · ESP32 · FreeRTOS · C++17)
-├── dispositivo_figlio/   Heard Node firmware
+├── dispositivo_figlio/   Node LoRa receiver test sketch (see Prototype status above)
 ├── path_loader/          GPX tools: clean tracks, upload routes to devices over serial
 └── simulator/            Digital twin: firmware-in-the-loop simulation
     ├── sim/              pybind11 shims wrapping the real ConnectionManager
