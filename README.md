@@ -34,7 +34,7 @@ In remote mountain areas there is no cellular coverage, and existing safety tool
 | **Heard Node** (`dispositivo_figlio`) | Adult hiker               | Follows the route, answers polls, relays messages              |
 | **Heard Pico** (concept)              | Child / beginner          | Button-sized: send distress, receive alerts                    |
 
-> **Prototype status:** the group protocol (`ConnectionManager`) is shared code that implements *both* roles — Core or Node is selected by the device ID it is constructed with. In field tests the Node device ran this shared firmware with a different ID; `dispositivo_figlio/` itself currently contains only a minimal LoRa receiver sketch. A standalone Node build (protocol + GPS + path check, no display) is an open milestone.
+> **Prototype status:** the thesis goal was to build a **first working demo and the architecture behind it** — the protocol, the off-route detection and the firmware-in-the-loop simulator — not a finished product. The group protocol (`ConnectionManager`) is shared code that implements *both* roles — Core or Node is selected by the device ID it is constructed with. In field tests the Node device ran this shared firmware with a different ID; `dispositivo_figlio/` itself currently contains only a minimal LoRa receiver sketch. A standalone Node build (protocol + GPS + path check, no display) is an open milestone ([#1](https://github.com/luciobaiocchi/heard/issues/1)), and more field testing and improvements are planned — issues and contributions are welcome.
 
 ### LoRa protocol (3 message types)
 
