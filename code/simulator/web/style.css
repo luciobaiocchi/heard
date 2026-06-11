@@ -1,0 +1,184 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+}
+
+#map {
+  flex: 1;
+  height: 100vh;
+}
+
+/* ── Sidebar ────────────────────────────────────────────── */
+#sidebar {
+  width: 260px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  background: #161b22;
+  overflow-y: auto;
+  border-left: 1px solid #30363d;
+  flex-shrink: 0;
+}
+
+.panel {
+  background: #1c2128;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.panel h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #8b949e;
+  margin-bottom: 8px;
+}
+
+/* ── Playback controls ──────────────────────────────────── */
+#pb-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+#btn-play {
+  background: #238636;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+}
+#btn-play:hover { background: #2ea043; }
+
+#tick-display {
+  font-size: 11px;
+  color: #8b949e;
+  font-family: monospace;
+  flex: 1;
+}
+
+#speed-select {
+  background: #0d1117;
+  color: #e6edf3;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+#timeline {
+  width: 100%;
+  accent-color: #58a6ff;
+  cursor: pointer;
+}
+
+/* ── Protocol state ─────────────────────────────────────── */
+#state-req { font-size: 13px; margin-bottom: 8px; }
+
+.badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #30363d;
+  color: #8b949e;
+}
+.badge.active { background: #f5a623; color: #000; }
+.badge.idle   { background: #238636; color: #fff; }
+.badge.out    { background: #f85149; color: #fff; }
+
+.chip {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #1f6feb;
+  color: #fff;
+}
+
+#state-mode, #state-out { font-size: 13px; margin-bottom: 4px; }
+
+#known-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+#known-table th {
+  color: #8b949e;
+  text-align: left;
+  padding: 2px 4px;
+  border-bottom: 1px solid #30363d;
+}
+#known-table td { padding: 2px 4px; }
+
+/* ── Metrics ────────────────────────────────────────────── */
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.m-label { font-size: 12px; color: #8b949e; }
+.m-val   { font-size: 13px; font-weight: 600; }
+.m-val.ok   { color: #3fb950; }
+.m-val.fail { color: #f85149; }
+
+#sparkline { display: block; margin-top: 8px; border-radius: 4px; }
+
+/* ── Message log ────────────────────────────────────────── */
+#panel-log { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+#log-body {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 11px;
+  font-family: monospace;
+  line-height: 1.6;
+  max-height: 220px;
+}
+
+.log-req  { color: #f5a623; }
+.log-wait { color: #58a6ff; }
+.log-pos  { color: #7ee787; }
+.log-fail { color: #6e7681; text-decoration: line-through; }
+.log-out  { color: #f85149; font-weight: 600; }
+
+/* ── Connectivity table ─────────────────────────────────── */
+#reach-table { width: 100%; border-collapse: collapse; font-size: 11px; font-family: monospace; }
+#reach-table th {
+  color: #8b949e;
+  text-align: center;
+  padding: 2px 4px;
+  border-bottom: 1px solid #30363d;
+}
+#reach-table td { text-align: center; padding: 2px 3px; }
+.reach-label { text-align: left !important; color: #8b949e; }
+.reach-ok    { color: #3fb950; font-weight: 700; }
+.reach-no    { color: #3d444d; }
+.reach-self  { color: #3d444d; }
+
+/* Devices are rendered as map layers (circle + symbol), not DOM markers. */
+
+/* ── MapLibre control theme ─────────────────────────────── */
+.maplibregl-ctrl-group {
+  background: #1c2128 !important;
+  border: 1px solid #30363d !important;
+}
+.maplibregl-ctrl-group button {
+  background-color: transparent !important;
+}
+.maplibregl-ctrl-group button:hover {
+  background-color: #30363d !important;
+}
+.maplibregl-ctrl-icon { filter: invert(0.8); }

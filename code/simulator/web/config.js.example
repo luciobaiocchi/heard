@@ -1,0 +1,13 @@
+// ── Map style ──────────────────────────────────────────────────────────────
+// Pick a style key:
+//   'outdoor'   — topo + contour lines (default)
+//   'satellite' — aerial/satellite imagery
+//   'hybrid'    — satellite + road/place labels  (MapTiler key required)
+//   'topo'      — clean topo map
+window.MAP_STYLE_KEY = 'outdoor';
+
+// ── MapTiler API key (optional) ────────────────────────────────────────────
+// Get a free key at https://maptiler.com → Sign up → API Keys → Create a key.
+// Without a key the viewer falls back to free ESRI / OpenFreeMap tiles.
+// With a key you get better outdoor/topo styles and the 'hybrid' option.
+window.MAPTILER_KEY = 'your_maptiler_key_here';

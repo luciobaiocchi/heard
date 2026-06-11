@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.so
+build/
+.pytest_cache/
+.pio/
+.DS_Store
+code/simulator/web/config.js
+code/simulator/web/trace.json

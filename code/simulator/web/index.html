@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HEARD — 3D Simulation Replay</title>
+  <script src="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- ── Right sidebar ─────────────────────────────────────────── -->
+  <div id="sidebar">
+
+    <div class="panel" id="panel-playback">
+      <h3>Playback</h3>
+      <div id="pb-row">
+        <button id="btn-play">▶</button>
+        <span id="tick-display">t 0</span>
+        <select id="speed-select">
+          <option value="1">1×</option>
+          <option value="5" selected>5×</option>
+          <option value="10">10×</option>
+          <option value="20">20×</option>
+          <option value="50">50×</option>
+          <option value="100">100×</option>
+        </select>
+      </div>
+      <input type="range" id="timeline" min="0" max="100" step="1" value="0" />
+    </div>
+
+    <div class="panel" id="panel-state">
+      <h3>Protocol State</h3>
+      <div id="state-mode">Mode: <span id="mode-chip" class="chip">—</span></div>
+      <div id="state-req">Request: <span id="req-badge" class="badge">—</span></div>
+      <div id="state-out">Off-path: <span id="out-badge" class="badge idle">none</span></div>
+      <table id="known-table">
+        <thead><tr><th>ID</th><th>Lat</th><th>Lon</th></tr></thead>
+        <tbody id="known-body"></tbody>
+      </table>
+    </div>
+
+    <div class="panel" id="panel-metrics">
+      <h3>Radio Metrics</h3>
+      <div class="metric-row">
+        <span class="m-label">Sent</span>
+        <span id="m-sent" class="m-val">0</span>
+      </div>
+      <div class="metric-row">
+        <span class="m-label">Delivered</span>
+        <span id="m-delivered" class="m-val ok">0</span>
+      </div>
+      <div class="metric-row">
+        <span class="m-label">Dropped</span>
+        <span id="m-dropped" class="m-val fail">0</span>
+      </div>
+      <div class="metric-row">
+        <span class="m-label">Delivery %</span>
+        <span id="m-rate" class="m-val">—</span>
+      </div>
+      <canvas id="sparkline" width="200" height="50"></canvas>
+    </div>
+
+    <div class="panel" id="panel-log">
+      <h3>Message Log</h3>
+      <div id="log-body"></div>
+    </div>
+
+    <div class="panel" id="panel-reach">
+      <h3>Connectivity</h3>
+      <table id="reach-table">
+        <thead><tr id="reach-head"></tr></thead>
+        <tbody id="reach-rows"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Optional MapTiler key for outdoor/topo style — get one free at https://maptiler.com -->
+  <!-- Without it a simpler OpenFreeMap base is used (still gets 3D terrain) -->
+  <script src="config.js" onerror="console.warn('config.js not found — using default map style')"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

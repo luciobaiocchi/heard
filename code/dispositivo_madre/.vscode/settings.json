@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "*.php": "php",
+        "string": "cpp",
+        "optional": "cpp",
+        "system_error": "cpp",
+        "mutex": "cpp",
+        "cstdlib": "cpp",
+        "fstream": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp"
+    }
+}
