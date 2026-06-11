@@ -5,7 +5,13 @@
 Born as a Bachelor's thesis in Computer Engineering and Computer Science — Alma Mater Studiorum · University of Bologna (Cesena Campus), AY 2024–2025.
 Author: **Lucio Baiocchi** · Supervisor: **Prof. Alessandro Ricci**
 
-📺 *Build video: the whole creation process is documented on YouTube — link coming soon.*
+📺 *Build video: the whole creation process is documented on [YouTube](https://www.youtube.com/watch?v=rSgT1LedNBk).*
+
+<p align="center">
+  <img src="images/final_core_printed.jpg" width="46%" alt="Heard Core prototype — 3D-printed enclosure, e-ink showing live GPS fix, path state and group table" />
+  <img src="images/final_core_internal.jpg" width="46%" alt="Heard Core internals — ESP32, u-blox GPS, LoRa radio and 2.9-inch e-ink module" />
+</p>
+<p align="center"><em>The Heard Core prototype: live group status on e-ink (left) and the internals — ESP32, GPS, LoRa, e-ink (right). 10-cent coin for scale.</em></p>
 
 ---
 
@@ -22,11 +28,11 @@ In remote mountain areas there is no cellular coverage, and existing safety tool
 
 ### Device variants
 
-| Device | User | Role |
-|---|---|---|
-| **Heard Core** (`dispositivo_madre`) | Guide / experienced hiker | E-ink display, SOS button, route recording, group coordination |
-| **Heard Node** (`dispositivo_figlio`) | Adult hiker | Follows the route, answers polls, relays messages |
-| **Heard Pico** (concept) | Child / beginner | Button-sized: send distress, receive alerts |
+| Device                                | User                      | Role                                                           |
+| ------------------------------------- | ------------------------- | -------------------------------------------------------------- |
+| **Heard Core** (`dispositivo_madre`)  | Guide / experienced hiker | E-ink display, SOS button, route recording, group coordination |
+| **Heard Node** (`dispositivo_figlio`) | Adult hiker               | Follows the route, answers polls, relays messages              |
+| **Heard Pico** (concept)              | Child / beginner          | Button-sized: send distress, receive alerts                    |
 
 ### LoRa protocol (3 message types)
 
@@ -44,7 +50,7 @@ The repository includes a full **digital twin** of the system: the *actual firmw
 
 Recorded runs are replayed in the browser on **3D terrain** (MapLibre GL JS):
 
-![Simulator replay viewer](images/simulator_viewer.jpg)
+![Simulator replay demo](images/video_demo_simulator.gif)
 
 *Blue trail = planned route, green corridor = allowed deviation, dots = devices (red = Core), expanding rings = LoRa transmissions, sidebar = live protocol state, delivery metrics and group connectivity matrix.*
 
@@ -82,6 +88,9 @@ HEARD_PROJECT.md          Comprehensive project description
 ## Hardware
 
 ESP32 (dual-core, FreeRTOS) · u-blox NEO-6M GPS · LoRa transceiver · 2.9″ e-ink display (Core) · 3D-printed casing. Field tests measured ~1 m GPS error, <1% path-deviation error, LoRa range of ~3 km open / 300–400 m obstructed.
+
+![Product concept renders](images/mokup.jpg)
+*Product concept: Heard Core / Node handhelds and the button-sized Heard Pico for children.*
 
 ## Documentation
 
