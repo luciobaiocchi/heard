@@ -257,6 +257,18 @@ void ConnectionManager::handlePositionData(const String& message, int senderId) 
             if (parsePositionMessage(singlePos, position)) {
                 updateDevicePosition(position.deviceId, position.latitude, position.longitude);
                 debug("Aggiornata posizione dispositivo " + String(position.deviceId));
+
+                // L'entry può essere stata inoltrata per conto di un dispositivo
+                // fuori portata diretta: va rimossa dalla contabilità del round
+                // (non solo il sender), altrimenti il round termina solo per
+                // timeout globale anche quando tutte le posizioni sono arrivate.
+                waitingDevices.erase(position.deviceId);
+                int entryId = position.deviceId;
+                auto pit = std::find_if(pendingDevices.begin(), pendingDevices.end(),
+                                        [entryId](const PendingDevice& p) { return p.deviceId == entryId; });
+                if (pit != pendingDevices.end()) {
+                    pendingDevices.erase(pit);
+                }
             }
         }
         

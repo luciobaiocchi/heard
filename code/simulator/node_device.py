@@ -7,15 +7,17 @@ class NodeDevice:
     """
     Simulates a HEARD Node (relay/endpoint) device in pure Python.
 
-    Protocol behaviour
-    ------------------
-    * Receives REQ  → appends own ID to hop list, re-broadcasts the REQ,
-                      then broadcasts own POS after POS_DELAY_TICKS ticks.
-    * Receives WAIT → no action (just an ACK from the core).
-    * Receives POS  → no action.
-
-    The core (C++ SimDevice) receives the forwarded REQ, adds this node to
-    its pendingDevices, sends a WAIT back, then expects a POS reply.
+    Protocol behaviour (all three legs of the multi-hop chain)
+    ----------------------------------------------------------
+    * Receives REQ (not in hop list) → appends own ID, re-broadcasts the
+      REQ, remembers the sender as its *upstream*, then broadcasts own POS
+      after POS_DELAY_TICKS ticks.
+    * Hears a REQ that contains its own ID (a downstream device relayed
+      our chain) → sends WAIT|<downstream_id> upstream, so the core keeps
+      the round open for a device it cannot hear directly.
+    * Receives WAIT from downstream → forwards it upstream (deep chains).
+    * Receives POS from downstream → forwards it upstream (return leg);
+      the core parses the entries and clears them from its accounting.
     """
 
     POS_DELAY_TICKS = 3   # ticks between forwarding REQ and sending POS
@@ -35,7 +37,10 @@ class NodeDevice:
         self._pos_ticks_left: int = 0
         self._responded_hops: set = set()                # hop-list fingerprints already relayed this round
         self._sim_ms: int = 0                            # updated each step(); used for round detection
-        self._last_core_req_ms: int = -(self.ROUND_GAP_MS + 1)  # forces clear on first REQ
+        self._last_req_ms: int = -(self.ROUND_GAP_MS + 1)  # forces clear on first REQ
+        self._upstream: int | None = None                # who we relay toward this round
+        self._waited_ids: set = set()                    # downstream ids already announced via WAIT
+        self._forwarded_pos: set = set()                 # POS payloads already relayed this round
 
     # ── Python radio layer interface ──────────────────────────────────────
 
@@ -79,7 +84,16 @@ class NodeDevice:
     def _handle(self, msg: str, sender_id: int) -> None:
         if msg.startswith("REQ|"):
             self._handle_req(msg, sender_id)
-        # WAIT and POS messages require no action from a simple node
+        elif msg.startswith("WAIT|"):
+            self._handle_wait(msg, sender_id)
+        elif msg.startswith("POS|"):
+            self._handle_pos(msg, sender_id)
+
+    def _new_round(self) -> None:
+        self._responded_hops.clear()
+        self._waited_ids.clear()
+        self._forwarded_pos.clear()
+        self._upstream = None
 
     def _handle_req(self, msg: str, sender_id: int) -> None:
         parts = msg.split("|")
@@ -87,22 +101,33 @@ class NodeDevice:
         known_pos = parts[2] if len(parts) > 2 else ""
         hop_list = [int(x) for x in hop_str.split(",") if x.strip()]
 
-        # A direct REQ from the core (sender_id=0) may signal a new polling round.
-        # Clear stale fingerprints only if enough time has elapsed since the last
-        # core REQ (> ROUND_GAP_MS), so within-round duplicates are still suppressed.
-        if sender_id == 0:
-            if self._sim_ms - self._last_core_req_ms > self.ROUND_GAP_MS:
-                self._responded_hops.clear()
-            self._last_core_req_ms = self._sim_ms
+        # New-round detection by time gap from the last REQ heard from ANY
+        # sender — a relay-only node never hears the core directly, so the
+        # gap (> ROUND_GAP_MS) is the only reliable round boundary.
+        if self._sim_ms - self._last_req_ms > self.ROUND_GAP_MS:
+            self._new_round()
+        self._last_req_ms = self._sim_ms
+
+        if self.device_id in hop_list:
+            # A downstream device relayed our chain: announce it upstream
+            # (WAIT leg) so the core keeps the round open for a device it
+            # cannot hear. The core inserts it into waitingDevices and
+            # resets our timeout.
+            downstream = hop_list[-1]
+            if (downstream != self.device_id and self._upstream is not None
+                    and downstream not in self._waited_ids):
+                self._waited_ids.add(downstream)
+                self._outbox.append((self._upstream, f"WAIT|{downstream}"))
+            return
 
         # Avoid re-relaying a chain we've already forwarded within this round
         fingerprint = tuple(hop_list)
         if fingerprint in self._responded_hops:
             return
-        if self.device_id in hop_list:
-            return  # already in chain
 
         self._responded_hops.add(fingerprint)
+        if self._upstream is None:
+            self._upstream = sender_id  # first REQ of the round defines upstream
 
         # Forward REQ with our ID appended to the hop list
         new_hop_str = (hop_str + "," if hop_str else "") + str(self.device_id)
@@ -114,3 +139,32 @@ class NodeDevice:
         pos_msg = f"POS|{self.device_id},{self.lat:.6f},{self.lon:.6f}"
         self._pending_pos.append((-1, pos_msg))
         self._pos_ticks_left = self.POS_DELAY_TICKS
+
+    def _handle_wait(self, msg: str, sender_id: int) -> None:
+        """Relay downstream WAITs upstream so deep chains stay accounted for."""
+        if self._upstream is None or sender_id == self._upstream:
+            return
+        try:
+            waiting_id = int(msg.split("|")[1])
+        except (IndexError, ValueError):
+            return
+        if waiting_id == self.device_id or waiting_id in self._waited_ids:
+            return
+        self._waited_ids.add(waiting_id)
+        self._outbox.append((self._upstream, msg))
+
+    def _handle_pos(self, msg: str, sender_id: int) -> None:
+        """Forward downstream position reports toward the core (return leg)."""
+        if self._upstream is None or sender_id == self._upstream:
+            return
+        payload = msg[4:]
+        try:
+            entry_ids = {int(e.split(",")[0]) for e in payload.split("|") if e}
+        except ValueError:
+            return
+        if self.device_id in entry_ids:
+            return  # echo of our own (or already-merged) report
+        if payload in self._forwarded_pos:
+            return
+        self._forwarded_pos.add(payload)
+        self._outbox.append((self._upstream, msg))

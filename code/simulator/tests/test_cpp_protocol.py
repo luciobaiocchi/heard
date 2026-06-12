@@ -96,21 +96,31 @@ class TestUnreachableGroup:
 
 
 class TestMultiHopRelay:
-    @pytest.mark.xfail(
-        strict=True,
-        reason="POS aggregation through relays is not implemented in the "
-        "Python NodeDevice stand-in (and all-C++ groups are blocked by the "
-        "missing role check in ConnectionManager::step) — see issue #2",
-    )
     def test_out_of_range_node_reached_via_relay(self):
         """Core ↔ far node impossible directly (1400 m > d_max 900 m);
-        the middle node must relay the REQ out AND the POS chain back.
-        Today only the REQ leg works: the middle node replies upstream
-        before the far node's POS arrives and never forwards it."""
+        the middle node relays the REQ out, announces the far node via
+        WAIT, and forwards its POS back (fixed in issue #2)."""
         devices, radio = make_group([700, 1400])
         run(devices, radio, INTERVAL_TICKS * 3)
 
         known = devices[0].get_known_positions()
         assert 2 in known, (
             f"far node never reached the core; known={sorted(known.keys())}"
+        )
+
+    def test_relay_round_completes_without_global_timeout(self):
+        """After the far node's POS arrives via relay, the round must close
+        cleanly (the core erases relayed entries from its accounting)."""
+        devices, radio = make_group([700, 1400])
+        run(devices, radio, INTERVAL_TICKS)
+        assert not devices[0].is_request_in_progress()
+
+    def test_three_hop_chain(self):
+        """0 — 700 — 1400 — 2100 m: two relays deep."""
+        devices, radio = make_group([700, 1400, 2100])
+        run(devices, radio, INTERVAL_TICKS * 3)
+
+        known = devices[0].get_known_positions()
+        assert {1, 2, 3} <= set(known.keys()), (
+            f"chain incomplete; known={sorted(known.keys())}"
         )

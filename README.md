@@ -1,6 +1,14 @@
-# HEARD — Hiking Emergency Assistance and Rescue Device
+<p align="center">
+  <img src="images/HEARD.png" width="160" alt="HEARD logo" />
+</p>
 
-[![CI](https://github.com/luciobaiocchi/heard/actions/workflows/ci.yml/badge.svg)](https://github.com/luciobaiocchi/heard/actions/workflows/ci.yml)
+<h1 align="center">HEARD — Hiking Emergency Assistance and Rescue Device</h1>
+
+<p align="center">
+  <a href="https://github.com/luciobaiocchi/heard/actions/workflows/ci.yml"><img src="https://github.com/luciobaiocchi/heard/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache-2.0" /></a>
+  <a href="https://www.youtube.com/watch?v=rSgT1LedNBk"><img src="https://img.shields.io/badge/Build_video-YouTube-red.svg" alt="Build video" /></a>
+</p>
 
 **Embedded devices for the safety of hiking groups in remote environments — fully offline, over LoRa.**
 
