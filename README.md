@@ -101,13 +101,17 @@ HEARD_PROJECT.md          Comprehensive project description
 
 ESP32 (dual-core, FreeRTOS) · u-blox NEO-6M GPS · LoRa transceiver · 2.9″ e-ink display (Core) · 3D-printed casing. Field tests measured ~1 m GPS error, <1% path-deviation error, LoRa range of ~3 km open / 300–400 m obstructed.
 
+The 3D-printable enclosure files (STL + G-code) are published as a [release asset](https://github.com/luciobaiocchi/heard/releases/tag/enclosures-v1).
+
 ![Product concept renders](images/mokup.jpg)
 *Product concept: Heard Core / Node handhelds and the button-sized Heard Pico for children.*
 
 ## Documentation
 
 - [`HEARD_PROJECT.md`](HEARD_PROJECT.md) — comprehensive project description
+- [`ROADMAP.md`](ROADMAP.md) — what's next: firmware milestones, simulator improvements, MeshCore/Meshtastic as transport
 - [`code/simulator/README.md`](code/simulator/README.md) — simulator & viewer manual
+- [`code/simulator/SIMULATION.md`](code/simulator/SIMULATION.md) — deep dive: how the simulation works and why every parameter has its value
 - [`code/simulator/ARCHITECTURE.md`](code/simulator/ARCHITECTURE.md) — how the firmware is compiled into the simulator
 
 ## License

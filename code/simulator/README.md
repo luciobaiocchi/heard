@@ -2,6 +2,9 @@
 
 Discrete-event simulator for the **HEARD** (Hiking Emergency Assistance and Rescue Device) LoRa group-positioning protocol. The simulator runs the real firmware C++ (`ConnectionManager`) alongside a Python-controlled world (GPS, radio, terrain) to validate protocol behaviour under realistic hiking scenarios.
 
+> For the deep dive — how every model works and why each parameter has its
+> value — see [SIMULATION.md](SIMULATION.md).
+
 ---
 
 ## Table of Contents
