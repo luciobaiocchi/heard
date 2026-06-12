@@ -13,6 +13,8 @@
 #define CM_GLOBAL_TIMEOUT_MS 30000      // Timeout globale per round completo
 #define CM_DEVICE_TIMEOUT_MS 10000      // Timeout per singolo dispositivo
 #define CM_REQUEST_INTERVAL_MS 10000    // Intervallo tra richieste automatiche
+#define CM_ROUND_GAP_MS 5000            // Gap minimo che separa due round (lato nodo);
+                                        // deve restare < CM_REQUEST_INTERVAL_MS
 #define CM_TASK_STACK_SIZE 8192         // Stack size per task ConnectionManager
 #define CM_TASK_PRIORITY 2              // Priorità task ConnectionManager
 #define CM_TASK_CORE 0                  // Core per task ConnectionManager

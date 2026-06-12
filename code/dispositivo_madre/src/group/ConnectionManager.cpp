@@ -84,8 +84,8 @@ void ConnectionManager::taskLoop() {
         // Cleanup dispositivi scaduti
         cleanupExpiredPending();
         
-        // Avvia nuove richieste se necessario
-        if (!getRequestInProgress()) {
+        // Avvia nuove richieste se necessario (solo il core avvia i round)
+        if (isCoreRole() && !getRequestInProgress()) {
             if (millis() - lastPositionRequest > REQUEST_INTERVAL) {
                 debug("Avvio richiesta automatica");
                 if (startPositionRequest()) {
@@ -174,10 +174,11 @@ void ConnectionManager::handlePositionRequest(const String& message, int senderI
     // Formato: "REQ|hop1,hop2,hop3|pos_data"
     int firstSep = message.indexOf('|', 4);
     if (firstSep == -1) return;
-    
+
     String hopListStr = message.substring(4, firstSep);
+    String posData = message.substring(firstSep + 1);
     std::vector<int> hops = parseHopList(hopListStr);
-    
+
     // Verifica se siamo nella catena di hop
     bool foundMother = false;
     for (int hop : hops) {
@@ -186,32 +187,90 @@ void ConnectionManager::handlePositionRequest(const String& message, int senderI
             break;
         }
     }
-    
-    if (foundMother && hops.size() > 1) {
-        // Richiesta ricorsiva da un dispositivo nella catena
-        int requesterDevice = hops.back();
-        
-        debug("Richiesta ricorsiva da dispositivo " + String(requesterDevice));
-        
-        // Aggiungi il dispositivo ai pending se non già presente
-        bool alreadyPending = false;
-        for (const auto& pending : pendingDevices) {
-            if (pending.deviceId == requesterDevice) {
-                alreadyPending = true;
-                break;
+
+    if (!foundMother) {
+        // REQ di una catena che non ci contiene: il core la ignora
+        // (rete a core singolo), un nodo la inoltra e risponde.
+        if (!isCoreRole()) {
+            handleRequestAsNode(hopListStr, posData, senderId);
+        }
+        return;
+    }
+
+    if (hops.size() > 1) {
+        if (isCoreRole()) {
+            // Richiesta ricorsiva da un dispositivo nella catena
+            int requesterDevice = hops.back();
+
+            debug("Richiesta ricorsiva da dispositivo " + String(requesterDevice));
+
+            // Aggiungi il dispositivo ai pending se non già presente
+            bool alreadyPending = false;
+            for (const auto& pending : pendingDevices) {
+                if (pending.deviceId == requesterDevice) {
+                    alreadyPending = true;
+                    break;
+                }
+            }
+
+            if (!alreadyPending) {
+                pendingDevices.push_back(PendingDevice(requesterDevice, defaultDeviceTimeout));
+                waitingDevices.insert(requesterDevice);
+            }
+
+            // Invia messaggio di attesa
+            String waitMessage = "WAIT|" + String(motherDeviceId);
+            connection->sendMessage(senderId, waitMessage);
+
+            debug("Inviato WAIT a dispositivo " + String(requesterDevice));
+        } else {
+            // Nodo: un dispositivo a valle ha esteso la nostra catena.
+            // Lo annunciamo a monte (WAIT) così il core tiene aperto il
+            // round per un dispositivo che non può sentire direttamente.
+            int downstream = hops.back();
+            if (downstream != motherDeviceId && upstreamId >= 0 &&
+                announcedDownstream.find(downstream) == announcedDownstream.end()) {
+                announcedDownstream.insert(downstream);
+                connection->sendMessage(upstreamId, "WAIT|" + String(downstream));
+                debug("Annunciato dispositivo a valle " + String(downstream));
             }
         }
-        
-        if (!alreadyPending) {
-            pendingDevices.push_back(PendingDevice(requesterDevice, defaultDeviceTimeout));
-            waitingDevices.insert(requesterDevice);
-        }
-        
-        // Invia messaggio di attesa
-        String waitMessage = "WAIT|" + String(motherDeviceId);
-        connection->sendMessage(senderId, waitMessage);
-        
-        debug("Inviato WAIT a dispositivo " + String(requesterDevice));
+    }
+}
+
+void ConnectionManager::handleRequestAsNode(const String& hopListStr, const String& posData, int senderId) {
+    // Rilevamento nuovo round: un nodo raggiungibile solo via relay non
+    // sente mai il core direttamente, quindi l'unico confine affidabile
+    // tra round è il tempo trascorso dall'ultima REQ udita.
+    unsigned long now = millis();
+    if (now - lastReqHeardMs > (unsigned long)CM_ROUND_GAP_MS) {
+        respondedHops.clear();
+        announcedDownstream.clear();
+        forwardedPosPayloads.clear();
+        upstreamId = -1;
+        postedOwnPosThisRound = false;
+    }
+    lastReqHeardMs = now;
+
+    // Evita di re-inoltrare una catena già gestita in questo round
+    if (respondedHops.find(hopListStr) != respondedHops.end()) return;
+    respondedHops.insert(hopListStr);
+
+    if (upstreamId < 0) upstreamId = senderId;  // la prima REQ definisce il monte
+
+    // Inoltra la REQ con il nostro ID accodato alla hop list
+    String newHops = hopListStr.isEmpty()
+        ? String(motherDeviceId)
+        : hopListStr + "," + String(motherDeviceId);
+    connection->broadcastMessage("REQ|" + newHops + "|" + posData);
+
+    // Risponde con la propria posizione (una sola volta per round)
+    if (!postedOwnPosThisRound && hasPositionFor(motherDeviceId)) {
+        postedOwnPosThisRound = true;
+        DevicePosition own = getPositionFor(motherDeviceId);
+        String pos = "POS|" + String(motherDeviceId) + "," +
+                     String(own.latitude, 6) + "," + String(own.longitude, 6);
+        connection->broadcastMessage(pos);
     }
 }
 
@@ -236,6 +295,15 @@ void ConnectionManager::handleWaitMessage(const String& message, int senderId) {
     
     // Aggiungi il dispositivo ai waiting
     waitingDevices.insert(deviceId);
+
+    // Nodo: inoltra a monte i WAIT provenienti da valle, così le catene
+    // profonde restano contabilizzate dal core.
+    if (!isCoreRole() && upstreamId >= 0 && senderId != upstreamId &&
+        deviceId != motherDeviceId &&
+        announcedDownstream.find(deviceId) == announcedDownstream.end()) {
+        announcedDownstream.insert(deviceId);
+        connection->sendMessage(upstreamId, message);
+    }
 }
 
 void ConnectionManager::handlePositionData(const String& message, int senderId) {
@@ -247,14 +315,16 @@ void ConnectionManager::handlePositionData(const String& message, int senderId) 
     // Parse delle posizioni multiple
     int start = 0;
     int pos = 0;
-    
+    bool containsOwnPosition = false;
+
     while (pos != -1) {
         pos = posData.indexOf('|', start);
         String singlePos = (pos == -1) ? posData.substring(start) : posData.substring(start, pos);
-        
+
         if (!singlePos.isEmpty()) {
             DevicePosition position;
             if (parsePositionMessage(singlePos, position)) {
+                if (position.deviceId == motherDeviceId) containsOwnPosition = true;
                 updateDevicePosition(position.deviceId, position.latitude, position.longitude);
                 debug("Aggiornata posizione dispositivo " + String(position.deviceId));
 
@@ -285,7 +355,18 @@ void ConnectionManager::handlePositionData(const String& message, int senderId) 
     }
     
     waitingDevices.erase(senderId);
-    
+
+    // Nodo: inoltra a monte i report di posizione provenienti da valle
+    // (gamba di ritorno della catena multi-hop). Le proprie posizioni e i
+    // payload già inoltrati vengono scartati per evitare loop.
+    if (!isCoreRole() && upstreamId >= 0 && senderId != upstreamId &&
+        !containsOwnPosition &&
+        forwardedPosPayloads.find(posData) == forwardedPosPayloads.end()) {
+        forwardedPosPayloads.insert(posData);
+        connection->sendMessage(upstreamId, message);
+        debug("Inoltrato POS a monte verso " + String(upstreamId));
+    }
+
     // Controlla se abbiamo finito
     if (areAllDevicesResponded()) {
         debug("Round di richieste completato con successo!");
@@ -501,7 +582,7 @@ void ConnectionManager::step(unsigned long sim_ms) {
     handleIncomingMessage();
     checkTimeouts();
     cleanupExpiredPending();
-    if (!requestInProgress) {
+    if (isCoreRole() && !requestInProgress) {
         if (sim_ms - simLastAutoRequestMs >= (unsigned long)CM_REQUEST_INTERVAL_MS) {
             startPositionRequest();
             simLastAutoRequestMs = sim_ms;
