@@ -1,5 +1,7 @@
 # HEARD — Hiking Emergency Assistance and Rescue Device
 
+[![CI](https://github.com/luciobaiocchi/heard/actions/workflows/ci.yml/badge.svg)](https://github.com/luciobaiocchi/heard/actions/workflows/ci.yml)
+
 **Embedded devices for the safety of hiking groups in remote environments — fully offline, over LoRa.**
 
 Born as a Bachelor's thesis in Computer Engineering and Computer Science — Alma Mater Studiorum · University of Bologna (Cesena Campus), AY 2024–2025.

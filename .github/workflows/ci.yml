@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Compiles the real firmware protocol code (ConnectionManager) into a
+  # Python module and regression-tests it along real GPX tracks.
+  simulator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Install dependencies
+        run: pip install numpy matplotlib pybind11 pytest
+      - name: Build heard_sim (firmware C++ → Python via pybind11)
+        working-directory: code/simulator
+        run: |
+          cmake -B build -DPYTHON_EXECUTABLE="$(which python)"
+          cmake --build build
+          cp build/heard_sim*.so .
+      - name: Run test suite
+        working-directory: code/simulator
+        run: pytest -v
+
+  # Proves the ESP32 firmware still compiles for the real target.
+  firmware:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [dispositivo_madre, dispositivo_figlio]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: ~/.platformio
+          key: pio-${{ runner.os }}-${{ matrix.project }}-${{ hashFiles(format('code/{0}/platformio.ini', matrix.project)) }}
+          restore-keys: pio-${{ runner.os }}-
+      - name: Install PlatformIO
+        run: pip install platformio
+      - name: Build firmware
+        run: pio run -d code/${{ matrix.project }}
+
+  # Syntax gate for the web viewer's ES modules (no build step by design).
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check ES modules
+        working-directory: code/simulator/web
+        run: |
+          set -e
+          for f in app.js js/*.js; do
+            node --input-type=module --check < "$f"
+            echo "OK $f"
+          done
