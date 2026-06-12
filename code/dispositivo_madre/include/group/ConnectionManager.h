@@ -119,6 +119,21 @@ private:
     unsigned long defaultDeviceTimeout = 10000; // 10 secondi default
     // Initialized one interval in the past so the first REQ fires immediately.
     unsigned long simLastAutoRequestMs = 0UL - (unsigned long)CM_REQUEST_INTERVAL_MS;
+
+    // ── Node role (multi-hop relay) ──────────────────────────────────
+    // The same ConnectionManager implements both roles: device id 0 is
+    // the core (initiates polling rounds), every other id acts as a node
+    // (relays REQs, announces downstream devices via WAIT, forwards POS
+    // reports toward the core).
+    bool isCoreRole() const { return motherDeviceId == 0; }
+    void handleRequestAsNode(const String& hopListStr, const String& posData, int senderId);
+
+    int upstreamId = -1;                    // device we relay toward this round
+    unsigned long lastReqHeardMs = 0;       // round detection by time gap
+    bool postedOwnPosThisRound = false;
+    std::set<String> respondedHops;         // hop-list fingerprints relayed this round
+    std::set<int> announcedDownstream;      // ids already announced upstream via WAIT
+    std::set<String> forwardedPosPayloads;  // POS payloads already relayed upstream
 };
 
 #endif // CONNECTION_MANAGER_H
