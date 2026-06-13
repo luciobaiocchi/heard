@@ -40,11 +40,11 @@ In remote mountain areas there is no cellular coverage, and existing safety tool
 
 | Device                                | User                      | Role                                                           |
 | ------------------------------------- | ------------------------- | -------------------------------------------------------------- |
-| **Heard Core** (`dispositivo_madre`)  | Guide / experienced hiker | E-ink display, SOS button, route recording, group coordination |
-| **Heard Node** (`dispositivo_figlio`) | Adult hiker               | Follows the route, answers polls, relays messages              |
+| **Heard Core** (`core`)  | Guide / experienced hiker | E-ink display, SOS button, route recording, group coordination |
+| **Heard Node** (`node`) | Adult hiker               | Follows the route, answers polls, relays messages — **firmware not yet implemented** ([#1](https://github.com/luciobaiocchi/heard/issues/1)) |
 | **Heard Pico** (concept)              | Child / beginner          | Button-sized: send distress, receive alerts                    |
 
-> **Prototype status:** the thesis goal was to build a **first working demo and the architecture behind it** — the protocol, the off-route detection and the firmware-in-the-loop simulator — not a finished product. The group protocol (`ConnectionManager`) is shared firmware code implementing **both roles**: device id 0 acts as the Core (initiates polling rounds), any other id acts as a Node (relays REQs, announces out-of-range members via WAIT, forwards POS reports toward the core). The simulator regression-tests this with all-real-firmware groups up to 3 hops deep. `dispositivo_figlio/` itself still contains only a minimal LoRa receiver sketch — a standalone Node build (shared protocol + GPS + path check, no display) is an open milestone ([#1](https://github.com/luciobaiocchi/heard/issues/1)), and more field testing and improvements are planned — issues and contributions are welcome.
+> **Prototype status:** the thesis goal was to build a **first working demo and the architecture behind it** — the protocol, the off-route detection and the firmware-in-the-loop simulator — not a finished product. The group protocol (`ConnectionManager`) is shared firmware code implementing **both roles**: device id 0 acts as the Core (initiates polling rounds), any other id acts as a Node (relays REQs, announces out-of-range members via WAIT, forwards POS reports toward the core). The simulator regression-tests this with all-real-firmware groups up to 3 hops deep. `node/` itself still contains only a minimal LoRa receiver sketch — a standalone Node build (shared protocol + GPS + path check, no display) is an open milestone ([#1](https://github.com/luciobaiocchi/heard/issues/1)), and more field testing and improvements are planned — issues and contributions are welcome.
 
 ### LoRa protocol (3 message types)
 
@@ -54,7 +54,7 @@ WAIT|deviceId                an intermediate node signals it is relaying
 POS|id,lat,lng|...           a device returns (aggregated) positions
 ```
 
-WAIT messages keep the Core's timeout alive while distant nodes are being reached; duplicate relays are suppressed via hop-list fingerprints. Polling interval, global and per-device timeouts are configured in `code/dispositivo_madre/include/config.h`.
+WAIT messages keep the Core's timeout alive while distant nodes are being reached; duplicate relays are suppressed via hop-list fingerprints. Polling interval, global and per-device timeouts are configured in `code/core/include/config.h`.
 
 ## Simulator + 3D replay viewer
 
@@ -86,8 +86,8 @@ See [`code/simulator/README.md`](code/simulator/README.md) for the full document
 
 ```
 code/
-├── dispositivo_madre/    Heard Core firmware   (PlatformIO · ESP32 · FreeRTOS · C++17)
-├── dispositivo_figlio/   Node LoRa receiver test sketch (see Prototype status above)
+├── core/    Heard Core firmware   (PlatformIO · ESP32 · FreeRTOS · C++17)
+├── node/   Node LoRa receiver test sketch (see Prototype status above)
 ├── path_loader/          GPX tools: clean tracks, upload routes to devices over serial
 └── simulator/            Digital twin: firmware-in-the-loop simulation
     ├── sim/              pybind11 shims wrapping the real ConnectionManager

@@ -38,7 +38,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [dispositivo_madre, dispositivo_figlio]
+        project: [core, node]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

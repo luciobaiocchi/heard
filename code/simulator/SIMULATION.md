@@ -109,7 +109,7 @@ height is the half-obstructed worst case of the model, not full clearance.
 
 ## Protocol timing: one chain of inequalities
 
-The timing constants (in `dispositivo_madre/include/config.h` and `config.py`)
+The timing constants (in `core/include/config.h` and `config.py`)
 only work because they are ordered:
 
 ```

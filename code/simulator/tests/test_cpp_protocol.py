@@ -10,7 +10,7 @@ from node_device import NodeDevice
 from radio import SimRadio
 from config import TICK_S
 
-# Must mirror dispositivo_madre/include/config.h
+# Must mirror core/include/config.h
 CM_REQUEST_INTERVAL_MS = 10_000
 CM_GLOBAL_TIMEOUT_MS = 30_000
 

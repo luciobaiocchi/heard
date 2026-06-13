@@ -80,17 +80,18 @@ add the smallest one that does the job.
 CI runs three jobs, and all three must pass:
 
 - **simulator** — builds the C++ module and runs `pytest`.
-- **firmware** — `pio run` for both `dispositivo_madre` (Core) and
-  `dispositivo_figlio` (Node).
+- **firmware** — `pio run` for both `core` (Core) and
+  `node` (Node).
 - **web** — syntax-checks the viewer's ES modules.
 
 So before you push, at a minimum build the firmware you touched
-(`pio run -d code/dispositivo_madre`) and run the simulator tests.
+(`pio run -d code/core`) and run the simulator tests.
 
 ## A note on language
 
-The early firmware has Italian identifiers and comments (`dispositivo_madre`,
-`dispositivo_figlio`, …); the docs and newer code are in English. Write **new**
+The early firmware still has Italian in places — the entrypoints `main_m.cpp`
+(Core) and `main_f.cpp` (Node), and comments like `// ID del dispositivo madre`;
+the docs and newer code are in English. Write **new**
 code and comments in English. But please don't send pull requests that only
 rename existing Italian symbols across the tree — large cosmetic diffs are hard
 to review and bury the real history. If you're already changing a file

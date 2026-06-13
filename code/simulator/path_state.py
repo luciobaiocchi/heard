@@ -2,7 +2,7 @@
 Python port of the firmware Path::isInsidePath / distancePointToSegment.
 
 Replicates the exact algorithm in:
-  dispositivo_madre/src/path/Path.cpp
+  core/src/path/Path.cpp
 
 Used by record.py to compute per-device OUT_PATH state for visualization.
 The C++ sim module has no path subsystem, so this runs entirely in Python.

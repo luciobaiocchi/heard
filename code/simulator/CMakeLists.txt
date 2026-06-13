@@ -28,7 +28,7 @@ set(PYBIND11_FINDPYTHON ON)
 find_package(pybind11 REQUIRED PATHS "${pybind11_DIR}" NO_DEFAULT_PATH)
 
 # ── Include paths ─────────────────────────────────────────────────────────
-set(FIRMWARE_ROOT "${CMAKE_SOURCE_DIR}/../dispositivo_madre")
+set(FIRMWARE_ROOT "${CMAKE_SOURCE_DIR}/../core")
 
 include_directories(
     "${FIRMWARE_ROOT}/include"

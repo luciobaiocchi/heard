@@ -10,7 +10,7 @@ heard_sim = pytest.importorskip(
 from radio import SimRadio
 from config import TICK_S
 
-CM_REQUEST_INTERVAL_MS = 10_000  # mirrors dispositivo_madre/include/config.h
+CM_REQUEST_INTERVAL_MS = 10_000  # mirrors core/include/config.h
 INTERVAL_TICKS = int(CM_REQUEST_INTERVAL_MS / (TICK_S * 1000))
 
 LAT = 44.0

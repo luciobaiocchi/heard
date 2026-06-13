@@ -587,7 +587,7 @@ code/simulator/
 ### Related firmware (read-only)
 
 ```
-code/dispositivo_madre/
+code/core/
 ├── src/group/ConnectionManager.cpp   — core protocol logic (runs inside SimDevice)
 ├── src/group/Connection.cpp          — hardware LoRa driver (replaced by SimConnection)
 ├── include/group/ConnectionManager.h

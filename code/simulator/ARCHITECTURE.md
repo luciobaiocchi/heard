@@ -35,7 +35,7 @@ The Python radio layer drains `outQueue` and fills `inQueue` every tick.
 
 ### NodeDevice (Python)
 
-Implements the relay/endpoint behaviour that the actual child firmware (`dispositivo_figlio`) would provide. Each tick it:
+Implements the relay/endpoint behaviour that the actual Node firmware (`node`, not yet implemented — see issue #1) would provide. Each tick it:
 
 1. Receives any incoming messages from `_inbox`.
 2. If it sees a `REQ|...|` whose hop list does not include its own ID, it:

@@ -9,7 +9,7 @@ Items link to issues where one exists — contributions welcome on any of them.
 - **Standalone Node build** ([#1](https://github.com/luciobaiocchi/heard/issues/1)) —
   the protocol now implements both roles (PR #3); what's left is packaging:
   extract `ConnectionManager`/`Connection` into a shared library used by both
-  PlatformIO projects, give `dispositivo_figlio` a real `main` (protocol + GPS
+  PlatformIO projects, give `node` a real `main` (protocol + GPS
   + path check, no display), and select the role/device id via build flag or
   NVS instead of a hardcoded constant.
 - **Field test the multi-hop chain** — the 2-hop and 3-hop relay rounds are

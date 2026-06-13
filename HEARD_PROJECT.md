@@ -35,8 +35,8 @@ Three pillars:
 
 | Device | Target user | Key features |
 |---|---|---|
-| **Heard Core** (`dispositivo_madre`) | Experienced hiker / mountain guide | Largest battery, e-ink display, physical buttons, SOS button under protective cap, route recording and group coordination |
-| **Heard Node** (`dispositivo_figlio`) | Adult hiker | Smaller battery/display, follows pre-recorded routes, relays messages, sends/receives help requests |
+| **Heard Core** (`core`) | Experienced hiker / mountain guide | Largest battery, e-ink display, physical buttons, SOS button under protective cap, route recording and group coordination |
+| **Heard Node** (`node`) | Adult hiker | Smaller battery/display, follows pre-recorded routes, relays messages, sends/receives help requests — **firmware not yet implemented** (see [#1](https://github.com/luciobaiocchi/heard/issues/1)) |
 | **Heard Pico** | Child / beginner | Button-sized, minimal UI: SEND = distress signal, RECEIVE = alert/weather notification |
 
 ![Three devices](images/img-004.png)
@@ -316,7 +316,7 @@ thesis/
 ├── images/                             ← extracted PDF images (img-000 to img-047)
 ├── 3d_models/                          ← STL files for physical casing
 └── code/
-    ├── dispositivo_madre/              ← Heard Core firmware (ESP32, PlatformIO)
+    ├── core/              ← Heard Core firmware (ESP32, PlatformIO)
     │   ├── src/
     │   │   ├── main_m.cpp              ← entry point, FreeRTOS task setup
     │   │   ├── SharedData.cpp
@@ -336,7 +336,7 @@ thesis/
     │   ├── include/                    ← header files (mirrors src structure)
     │   ├── data/percorso.gpx           ← sample route
     │   └── platformio.ini
-    ├── dispositivo_figlio/             ← Heard Node firmware (basic LoRa receiver)
+    ├── node/             ← Heard Node firmware — NOT yet implemented (only a basic LoRa receiver sketch, see #1)
     │   └── src/main_f.cpp
     └── path_loader/                    ← Python tools for loading routes
         ├── path_loader.py

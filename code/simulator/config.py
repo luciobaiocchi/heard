@@ -22,7 +22,7 @@ LORA_MAX_M      = 5000.0   # distance above which p(delivery) = 0.0
 # ── Protocol timeouts (in ticks) ──────────────────────────────────────────
 REQUEST_INTERVAL  = 100    # 10 s  — how often Core polls the group
                             #         (informational: the real value is
-                            #         CM_REQUEST_INTERVAL_MS in dispositivo_madre/include/config.h;
+                            #         CM_REQUEST_INTERVAL_MS in core/include/config.h;
                             #         keep the two in sync)
 GLOBAL_TIMEOUT    = 300    # 30 s  — Core gives up on the entire round
 DEVICE_TIMEOUT    = 100    # 10 s  — Core drops one non-responding relay
