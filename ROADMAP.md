@@ -74,7 +74,43 @@ transport could be delegated:
   battery. The simulator is the differentiator here — nobody else in either
   ecosystem has a firmware-in-the-loop 3D testbed for this comparison.
 
-## 4. Product / community
+## 4. Safety detection criteria
+
+Today the device classifies each hiker with a single test: lateral distance to
+the planned route (the IN_PATH / OUT_PATH corridor, default ±100 m). That catches
+someone who wandered sideways off the trail, but not someone who is *on* the
+trail yet falling dangerously behind, or who has drifted away from the rest of
+the group. The following thresholds turn off-route detection into a richer,
+multi-criteria safety model. These three were proposed by
+[aemfbm](https://www.reddit.com/user/aemfbm/).
+
+- **Off-path distance** — the allowable lateral distance from the leader's path.
+  This generalises today's static-GPX corridor: once devices can record their
+  own track (see [§6](#6-on-device-path-recording)), waypoints can be laid down
+  automatically from the leader's actual route and each member checked against
+  *those* — letting a group follow the leader even with no pre-loaded GPX. The lateral test already exists in
+  `StateManager`; what's new is sourcing the reference line from the leader's
+  recorded breadcrumbs, not only a loaded file. Per-member threshold (a child's
+  corridor can be tighter than an adult's).
+- **Fall-behind distance** — the allowable *along-track* distance a member may
+  trail the leader. A new dimension, orthogonal to off-path: a hiker can be
+  perfectly on the trail and still be the straggler the leader needs to know
+  about. Implementation: project each position onto the route, compare its
+  cumulative arc-length to the leader's, and alert when the gap exceeds the
+  threshold. The simulator already projects positions onto the path and tracks
+  the leader, so this is a natural regression scenario.
+- **Isolation distance** *(optional)* — the allowable distance between one member
+  and the rest of the group, independent of the route. Catches someone who has
+  separated from everyone even while on-path and keeping pace. The Core already
+  aggregates the whole group's positions each polling round, so this is a cheap
+  nearest-neighbour check over the position table: flag a member whose nearest
+  neighbour is farther than the threshold. Lower priority than the first two.
+
+All three are per-member (or per-role) configurable thresholds, and are exactly
+the kind of behaviour the simulator should regression-test before any field walk
+— they belong in the [scenario library](#2-better-simulator).
+
+## 5. Product / community
 
 - Publish the 3D-printable enclosures (cleaned STL names) as a GitHub Release.
 - `v0.1.0` release once #1 lands (both firmwares build, multi-hop proven in sim).
@@ -83,3 +119,46 @@ transport could be delegated:
 - Hardware revision: integrated GPS+LoRa boards (T-Beam class) to drop the
   hand-wiring, with HEARD as firmware — overlaps with the Meshtastic decision
   above.
+
+## 6. On-device path recording
+
+A device can *load* a planned route but cannot yet *capture* one. Today the route
+is streamed in as `lat,lon` points over serial — `StateManager::loadPath()` reads
+them and the desktop `path_loader/` tool sends them from a GPX — and there is no
+firmware code that records the device's own GPS into a path, nor any flash
+storage (SPIFFS/NVS) to keep one. The goal is to let any device with a GPS record
+a new path as it walks, and save it on-device as a reusable planned route.
+
+- Sample GPS into a track while walking, with distance/time thinning so the
+  stored path stays small; start and stop from the e-ink UI or a button.
+- Persist recordings to flash and let one be re-selected as the active route for
+  a later hike — walk a trail once, follow it the next time.
+- This is the capability the leader-breadcrumb variant of
+  [off-path distance](#4-safety-detection-criteria) builds on, and a natural GPX
+  source for the phone path loader (BLE / Wi-Fi) under discussion: record on the
+  device, pull it to the phone, or push a phone-recorded track back.
+
+## 7. Hardware and enclosure
+
+Turning the hand-wired prototype into something you can actually carry up a
+mountain and trust in bad weather.
+
+- **PCB design** — replace the hand-wired ESP32 + u-blox GPS + LoRa + e-ink with
+  a single custom board: fewer connections to shake loose on the trail, a smaller
+  footprint, and repeatable builds. This is the in-house alternative to adopting
+  an off-the-shelf integrated board (the T-Beam-class option in
+  [§5](#5-product--community)) — pick between them once the form factor and
+  antenna placement (LoRa + GPS) are settled.
+- **Battery integration** — the hardware side of [§1](#1-firmware)'s power
+  budget: a LiPo cell sized to the measured per-role consumption, USB-C charging
+  with a charge IC and protection (BMS), and a fuel gauge so the leader can see
+  the group's remaining battery alongside their positions.
+- **Haptic feedback** — a vibration motor so the wearer is alerted silently when
+  they go OUT_PATH, fall behind, or receive an SOS — no need to be staring at the
+  e-ink or to hear a buzzer over wind. This is the delivery channel for the
+  [§4 detection criteria](#4-safety-detection-criteria); distinct buzz patterns
+  per alert type, driven at low power.
+- **Waterproof case** — take the 3D-printed enclosures
+  ([§5](#5-product--community)) to a sealed, IP-rated case for rain, snow and
+  dust: gasketed seams, sealed or portless charging (pads/wireless to avoid a USB
+  opening), waterproof buttons, and an RF-transparent window for the antennas.
