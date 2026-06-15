@@ -106,6 +106,14 @@ The 3D-printable enclosure files will be published as a release asset once the f
 ![Product concept renders](images/mokup.jpg)
 *Product concept: Heard Core / Node handhelds and the button-sized Heard Pico for children.*
 
+### PCB sponsor
+
+<a href="https://www.pcbway.com/"><img src="https://img.shields.io/badge/PCB%20sponsor-PCBWay-orange.svg" alt="PCB sponsor: PCBWay" /></a>
+
+[**PCBWay**](https://www.pcbway.com/) is supporting HEARD by sponsoring the manufacturing of the prototype PCBs. We're looking for a contributor to turn the breadboard schematic ([Wokwi project](https://wokwi.com/projects/436295484715573249)) into a manufacturable board — see the [PCB design milestone](ROADMAP.md#7-hardware-and-enclosure).
+
+> **Disclosure:** PCBWay's sponsorship covers only the cost of producing the PCBs. It is **not** a monetary payment to the author, and no money changes hands. HEARD remains an independent, open-source project.
+
 ## Documentation
 
 - [`HEARD_PROJECT.md`](HEARD_PROJECT.md) — comprehensive project description
