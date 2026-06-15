@@ -149,6 +149,11 @@ mountain and trust in bad weather.
   an off-the-shelf integrated board (the T-Beam-class option in
   [§5](#5-product--community)) — pick between them once the form factor and
   antenna placement (LoRa + GPS) are settled.
+  - **Help wanted:** we're looking for someone to turn the existing breadboard
+    schematic ([Wokwi project](https://wokwi.com/projects/436295484715573249))
+    into a manufacturable PCB layout — **[PCBWay](https://www.pcbway.com/) is
+    open to sponsoring the prototype prints**, so this can move from design to
+    real boards quickly. Reach out via an issue if you can help with the layout.
 - **Battery integration** — the hardware side of [§1](#1-firmware)'s power
   budget: a LiPo cell sized to the measured per-role consumption, USB-C charging
   with a charge IC and protection (BMS), and a fuel gauge so the leader can see
