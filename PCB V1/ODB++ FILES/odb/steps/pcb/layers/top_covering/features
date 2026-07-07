@@ -1,0 +1,25 @@
+UNITS=MM
+#Layer_Color=16711935
+#
+#Feature symbol names
+#
+$0 r1270
+
+#
+#Feature attribute names
+#
+@0 .geometry
+@1 .pad_usage
+
+#
+#Feature attribute text strings
+#
+&0 
+
+#
+#Layer features
+#
+P 45.6946 115.1382 0 P 0 0 ;0=0,1=0
+P 45.7708 111.3028 0 P 0 0 ;0=0,1=0
+P 49.4792 111.2774 0 P 0 0 ;0=0,1=0
+P 49.5046 115.1382 0 P 0 0 ;0=0,1=0

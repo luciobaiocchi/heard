@@ -1,0 +1,974 @@
+UNITS=MM
+#
+#Component attribute names
+#
+@0 .comp_mount_type
+@1 .comp_height
+@2 .no_pop
+@3 .comp_ignore
+@4 .comp_variant_list
+@5 .placement_layer
+
+#
+#Component attribute text strings
+#
+&0 top_layer
+
+# CMP 0
+CMP 11 31.5468 98.6536 0 N R302 22 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'RC0402JR-070RL'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/rc0402jr-070rl/yageo.html?utm_currency=USD&region=europe'
+PRP Datasheet_Link 'https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf'
+PRP Height '0.4mm'
+PRP Manufacturer_Name 'Yageo Group'
+PRP Manufacturer_Part_Number 'RC0402JR-070RL'
+PRP Mouser_Part_Number '603-RC0402JR-070RL'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/YAGEO/RC0402JR-070RL?qs=5Bml4Cp94iv7ykKkzPrwpQ%3D%3D'
+TOP 0 31.1658 98.6536 0 N 21 3 1
+TOP 1 31.9278 98.6536 0 N 1 2 2
+#
+# CMP 1
+CMP 1 55.0418 114.7318 0 N IC201 BALFHB-WL-05D3 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'BALFHB-WL-05D3'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/balfhb-wl-05d3/stmicroelectronics.html?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'https://www.st.com/resource/en/datasheet/balfhb-wl-05d3.pdf'
+PRP Height '0.68mm'
+PRP Manufacturer_Name 'STMicroelectronics'
+PRP Manufacturer_Part_Number 'BALFHB-WL-05D3'
+PRP Mouser_Part_Number '511-BALFHB-WL-05D3'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/STMicroelectronics/BALFHB-WL-05D3?qs=T%252BzbugeAwjgyeRVodYmoDw%3D%3D'
+TOP 0 54.35179884 115.231799 0 N 22 2 A1
+TOP 1 54.35179884 114.52180042 0 N 12 1 A2
+TOP 2 54.35179884 113.89179914 0 N 11 1 A3
+TOP 3 55.1268011 115.57180086 0 N 27 43 B1
+TOP 4 55.0418 114.7318 0 N 27 35 B2
+TOP 5 55.73180116 115.57180086 0 N 9 1 C1
+TOP 6 55.73180116 114.7318 0 N 27 38 C2
+TOP 7 55.73180116 113.89179914 0 N 13 1 C3
+#
+# CMP 2
+CMP 10 47.6209995 113.23300188 270 N IC200 STM32WLE5CCU6 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'STM32WLE5CCU6'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/stm32wle5ccu6/stmicroelectronics?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'https://www.st.com/resource/en/datasheet/stm32wle5c8.pdf'
+PRP Height '0.6mm'
+PRP Manufacturer_Name 'STMicroelectronics'
+PRP Manufacturer_Part_Number 'STM32WLE5CCU6'
+PRP Mouser_Part_Number '511-STM32WLE5CCU6'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/STMicroelectronics/STM32WLE5CCU6?qs=26oI9%252Bq63sLM90C6xjPI1g%3D%3D'
+TOP 0 44.87099992 109.78300116 270 N 0 31 1
+TOP 1 45.37099892 109.78300116 270 N 0 25 2
+TOP 2 45.87100046 109.78300116 270 N 0 30 3
+TOP 3 46.37099946 109.78300116 270 N 26 2 4
+TOP 4 46.87099846 109.78300116 270 N 25 2 5
+TOP 5 47.371 109.78300116 270 N 0 28 6
+TOP 6 47.870999 109.78300116 270 N 0 24 7
+TOP 7 48.37100054 109.78300116 270 N 0 22 8
+TOP 8 48.87099954 109.78300116 270 N 0 17 9
+TOP 9 49.37099854 109.78300116 270 N 0 20 10
+TOP 10 49.87100008 109.78300116 270 N 33 15 11
+TOP 11 50.37099908 109.78300116 270 N 0 23 12
+TOP 12 51.07100022 110.4830023 180 N 0 18 13
+TOP 13 51.07100022 110.9830013 180 N 0 29 14
+TOP 14 51.07100022 111.48300284 180 N 0 19 15
+TOP 15 51.07100022 111.98300184 180 N 0 16 16
+TOP 16 51.07100022 112.48300084 180 N 0 26 17
+TOP 17 51.07100022 112.98300238 180 N 15 3 18
+TOP 18 51.07100022 113.48300138 180 N 29 1 19
+TOP 19 51.07100022 113.98300292 180 N 11 2 20
+TOP 20 51.07100022 114.48300192 180 N 12 2 21
+TOP 21 51.07100022 114.98300092 180 N 10 3 22
+TOP 22 51.07100022 115.48300246 180 N 0 27 23
+TOP 23 51.07100022 115.98300146 180 N 23 4 24
+TOP 24 50.37099908 116.6830026 270 N 34 0 25
+TOP 25 49.87100008 116.6830026 270 N 14 1 26
+TOP 26 49.37099854 116.6830026 270 N 0 5 27
+TOP 27 48.87099954 116.6830026 270 N 33 19 28
+TOP 28 48.37100054 116.6830026 270 N 34 3 29
+TOP 29 47.870999 116.6830026 270 N 6 3 30
+TOP 30 47.371 116.6830026 270 N 0 2 31
+TOP 31 46.87099846 116.6830026 270 N 0 0 32
+TOP 32 46.37099946 116.6830026 270 N 0 3 33
+TOP 33 45.87100046 116.6830026 270 N 28 1 34
+TOP 34 45.37099892 116.6830026 270 N 0 13 35
+TOP 35 44.87099992 116.6830026 270 N 8 1 36
+TOP 36 44.17099878 115.98300146 180 N 33 25 37
+TOP 37 44.17099878 115.48300246 180 N 0 7 38
+TOP 38 44.17099878 114.98300092 180 N 0 6 39
+TOP 39 44.17099878 114.48300192 180 N 0 4 40
+TOP 40 44.17099878 113.98300292 180 N 32 9 41
+TOP 41 44.17099878 113.48300138 180 N 7 1 42
+TOP 42 44.17099878 112.98300238 180 N 0 1 43
+TOP 43 44.17099878 112.48300084 180 N 33 23 44
+TOP 44 44.17099878 111.98300184 180 N 34 2 45
+TOP 45 44.17099878 111.48300284 180 N 33 24 46
+TOP 46 44.17099878 110.9830013 180 N 20 0 47
+TOP 47 44.17099878 110.4830023 180 N 27 58 48
+TOP 48 47.6209995 113.23300188 180 N 27 66 49
+#
+# CMP 3
+CMP 15 54.3306 109.7026 90 N S202 TSA010A2518A ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://robu.in/wp-content/uploads/2024/10/C2888945.pdf'
+PRP Height '2.75mm'
+PRP Manufacturer_Name 'BZCN'
+PRP Manufacturer_Part_Number 'TSA010A2518A'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 54.3306 111.92759936 0 N 29 2 1
+TOP 1 54.3306 107.47760064 0 N 33 21 2
+#
+# CMP 4
+CMP 15 57.912 108.2294 270 N S201 TSA010A2518A ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://robu.in/wp-content/uploads/2024/10/C2888945.pdf'
+PRP Height '2.75mm'
+PRP Manufacturer_Name 'BZCN'
+PRP Manufacturer_Part_Number 'TSA010A2518A'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 57.912 106.00440064 180 N 27 64 1
+TOP 1 57.912 110.45439936 180 N 15 2 2
+#
+# CMP 5
+CMP 11 56.4896 111.9124 90 N R200 10k ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'RC0402JR-070RL'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/rc0402jr-070rl/yageo.html?utm_currency=USD&region=europe'
+PRP Datasheet_Link 'https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf'
+PRP Height '0.4mm'
+PRP Manufacturer_Name 'Yageo Group'
+PRP Manufacturer_Part_Number 'RC0402JR-070RL'
+PRP Mouser_Part_Number '603-RC0402JR-070RL'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/YAGEO/RC0402JR-070RL?qs=5Bml4Cp94iv7ykKkzPrwpQ%3D%3D'
+TOP 0 56.4896 112.2934 90 N 29 0 1
+TOP 1 56.4896 111.5314 90 N 27 62 2
+#
+# CMP 6
+CMP 3 57.8414007 111.6076 180 N C215 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 58.1264014 111.6076 180 N 15 0 1
+TOP 1 57.5564 111.6076 180 N 27 65 2
+#
+# CMP 7
+CMP 3 56.5404 113.2586 90 N C213 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 56.5404 113.5436007 90 N 33 13 1
+TOP 1 56.5404 112.9735993 90 N 27 51 2
+#
+# CMP 8
+CMP 3 60.2742 115.6264007 270 N C225 DNP ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 60.2742 115.3414 270 N 3 6 1
+TOP 1 60.2742 115.9114014 270 N 27 47 2
+#
+# CMP 9
+CMP 3 58.3692 115.0422007 90 N C224 DNP ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 58.3692 115.3272014 90 N 2 5 1
+TOP 1 58.3692 114.7572 90 N 27 45 2
+#
+# CMP 10
+CMP 3 57.7047995 115.04200258 90 N C223 33p ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 57.7047995 115.32700328 90 N 2 4 1
+TOP 1 57.7047995 114.75700188 90 N 30 1 2
+#
+# CMP 11
+CMP 3 41.7576 114.9604 90 N C212 1u ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 41.7576 115.2454007 90 N 27 59 1
+TOP 1 41.7576 114.6753993 90 N 32 5 2
+#
+# CMP 12
+CMP 3 41.0718 114.9604 90 N C211 1u ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 41.0718 115.2454007 90 N 27 60 1
+TOP 1 41.0718 114.6753993 90 N 32 6 2
+#
+# CMP 13
+CMP 3 42.4434 114.9547993 90 N C210 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 42.4434 115.2398 90 N 27 54 1
+TOP 1 42.4434 114.6697986 90 N 32 7 2
+#
+# CMP 14
+CMP 3 43.1292 114.9604 90 N C209 10n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 43.1292 115.2454007 90 N 27 53 1
+TOP 1 43.1292 114.6753993 90 N 32 4 2
+#
+# CMP 15
+CMP 3 50.4149995 118.05900188 270 N C228 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 50.4149995 117.77400118 270 N 34 4 1
+TOP 1 50.4149995 118.34400258 270 N 27 42 2
+#
+# CMP 16
+CMP 5 51.1769995 118.94800188 270 N C227 4u7 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 51.1769995 118.7110021 180 N 34 5 1
+TOP 1 51.1769995 119.18500166 180 N 27 36 2
+#
+# CMP 17
+CMP 11 39.243 119.888 0 N R102 100k ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'RC0402JR-070RL'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/rc0402jr-070rl/yageo.html?utm_currency=USD&region=europe'
+PRP Datasheet_Link 'https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf'
+PRP Height '0.4mm'
+PRP Manufacturer_Name 'Yageo Group'
+PRP Manufacturer_Part_Number 'RC0402JR-070RL'
+PRP Mouser_Part_Number '603-RC0402JR-070RL'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/YAGEO/RC0402JR-070RL?qs=5Bml4Cp94iv7ykKkzPrwpQ%3D%3D'
+TOP 0 38.862 119.888 0 N 17 0 1
+TOP 1 39.624 119.888 0 N 33 3 2
+#
+# CMP 18
+CMP 8 40.64 118.872 90 N L100 2u2 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://www.digikey.com/en/products/detail/murata-electronics/LQW15DN150M00D/9559544'
+PRP Height '0.7mm'
+PRP Manufacturer_Name 'Murata Electronics'
+PRP Manufacturer_Part_Number 'LQW15DN150M00D'
+PRP Mouser_Part_Number '81-LQW15DN150M00D'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Murata-Electronics/LQW15DN150M00D?qs=55YtniHzbhAjiaw66ArnFg%3D%3D'
+TOP 0 40.64 119.3219991 0 N 4 0 1
+TOP 1 40.64 118.4220009 0 N 33 2 2
+#
+# CMP 19
+CMP 8 40.9702 117.6782 180 N C101 22u ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 41.4201991 117.6782 90 N 27 56 1
+TOP 1 40.5202009 117.6782 90 N 33 10 2
+#
+# CMP 20
+CMP 8 37.1094 116.4844 180 N C100 22u ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 37.5593991 116.4844 90 N 27 10 1
+TOP 1 36.6594009 116.4844 90 N 5 3 2
+#
+# CMP 21
+CMP 11 37.338 120.396 0 N R101 1k ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'RC0402JR-070RL'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/rc0402jr-070rl/yageo.html?utm_currency=USD&region=europe'
+PRP Datasheet_Link 'https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf'
+PRP Height '0.4mm'
+PRP Manufacturer_Name 'Yageo Group'
+PRP Manufacturer_Part_Number 'RC0402JR-070RL'
+PRP Mouser_Part_Number '603-RC0402JR-070RL'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/YAGEO/RC0402JR-070RL?qs=5Bml4Cp94iv7ykKkzPrwpQ%3D%3D'
+TOP 0 36.957 120.396 0 N 18 0 1
+TOP 1 37.719 120.396 0 N 27 21 2
+#
+# CMP 22
+CMP 11 39.6748 114.7318 270 N R100 1k ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'RC0402JR-070RL'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/rc0402jr-070rl/yageo.html?utm_currency=USD&region=europe'
+PRP Datasheet_Link 'https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf'
+PRP Height '0.4mm'
+PRP Manufacturer_Name 'Yageo Group'
+PRP Manufacturer_Part_Number 'RC0402JR-070RL'
+PRP Mouser_Part_Number '603-RC0402JR-070RL'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/YAGEO/RC0402JR-070RL?qs=5Bml4Cp94iv7ykKkzPrwpQ%3D%3D'
+TOP 0 39.6748 114.3508 270 N 19 0 1
+TOP 1 39.6748 115.1128 270 N 27 15 2
+#
+# CMP 23
+CMP 13 38.227 118.10999746 0 N PS100 TPS62162DSGT ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'TPS62162DSGT'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/tps62162dsgt/texas-instruments?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'http://www.ti.com/lit/gpn/tps62162'
+PRP Height '0.8mm'
+PRP Manufacturer_Name 'Texas Instruments'
+PRP Manufacturer_Part_Number 'TPS62162DSGT'
+PRP Mouser_Part_Number '595-TPS62162DSGT'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPS62162DSGT?qs=gXEV9p%2FxLgc%252BlgWUUl7N3w%3D%3D'
+TOP 0 37.17699956 118.8599985 0 N 27 19 1
+TOP 1 37.17699956 118.35999696 0 N 5 5 2
+TOP 2 37.17699956 117.85999796 0 N 5 4 3
+TOP 3 37.17699956 117.35999642 0 N 27 14 4
+TOP 4 39.27700044 117.35999642 0 N 27 11 5
+TOP 5 39.27700044 117.85999796 0 N 33 11 6
+TOP 6 39.27700044 118.35999696 0 N 4 1 7
+TOP 7 39.27700044 118.8599985 0 N 17 1 8
+TOP 8 38.227 118.10999746 270 N 27 20 9
+#
+# CMP 24
+CMP 0 38.227 121.666 0 N LED101 19-213_G6C-AN1P2B_3T ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://componentsearchengine.com/Datasheets/1/19-213_G6C-AN1P2B_3T.pdf'
+PRP Height '0.6mm'
+PRP Manufacturer_Name 'Everlight'
+PRP Manufacturer_Part_Number '19-213/G6C-AN1P2B/3T'
+PRP Mouser_Part_Number '638-19213G6CAN1P2B3T'
+PRP Mouser_Price/Stock 'https://www.mouser.com/Search/Refine.aspx?Keyword=638-19213G6CAN1P2B3T'
+TOP 0 37.47699896 121.666 0 N 18 1 1
+TOP 1 38.97700104 121.666 0 N 33 1 2
+#
+# CMP 25
+CMP 0 37.592 114.7572 180 N LED100 19-213_G6C-AN1P2B_3T ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://componentsearchengine.com/Datasheets/1/19-213_G6C-AN1P2B_3T.pdf'
+PRP Height '0.6mm'
+PRP Manufacturer_Name 'Everlight'
+PRP Manufacturer_Part_Number '19-213/G6C-AN1P2B/3T'
+PRP Mouser_Part_Number '638-19213G6CAN1P2B3T'
+PRP Mouser_Price/Stock 'https://www.mouser.com/Search/Refine.aspx?Keyword=638-19213G6CAN1P2B3T'
+TOP 0 38.34200104 114.7572 180 N 19 1 1
+TOP 1 36.84199896 114.7572 180 N 5 1 2
+#
+# CMP 26
+CMP 12 34.798 118.49099746 270 N D100 SMAJ5.0AQ-13-F ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://www.mouser.de/datasheet/2/115/ds40739-1500914.pdf'
+PRP Height '2.4mm'
+PRP Manufacturer_Name 'Diodes Incorporated'
+PRP Manufacturer_Part_Number 'SMAJ5.0AQ-13-F'
+PRP Mouser_Part_Number '621-SMAJ5.0AQ-13-F'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Diodes-Incorporated/SMAJ5.0AQ-13-F?qs=17u8i%2FzlE8%2FlC4rBSQmAww%3D%3D'
+TOP 0 34.798 116.54099628 270 N 5 0 1
+TOP 1 34.798 120.44099864 270 N 27 12 2
+#
+# CMP 27
+CMP 14 48.5099995 122.50400188 90 N Y200 TG2520SMN_32.0000M-ECGNNM0 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'TG2520SMN 32.0000M-ECGNNM0'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/tg2520smn-32.0000m-ecgnnm0/epson-electronics-america?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'https://support.epson.biz/td/api/doc_check.php?dl=brief_TG2520SMN&lang=en'
+PRP Height '0.8mm'
+PRP Manufacturer_Name 'Epson Timing'
+PRP Manufacturer_Part_Number 'TG2520SMN 32.0000M-ECGNNM0'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 47.80999836 123.55400232 0 N 0 21 1
+TOP 1 47.80999836 121.45400144 0 N 27 69 2
+TOP 2 49.21000064 121.45400144 0 N 16 1 3
+TOP 3 49.21000064 123.55400232 0 N 6 2 4
+#
+# CMP 28
+CMP 2 56.78440256 114.75700188 90 N S200 BGS12WN6E6327XTSA1 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'BGS12WN6E6327XTSA1'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/bgs12wn6e6327xtsa1/infineon-technologies-ag.html?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'https://www.infineon.com/dgdl/Infineon-BGS12WN6-DataSheet-v01_00-EN.pdf?fileId=5546d4626b2d8e69016b89d2b3334727'
+PRP Height '0.4mm'
+PRP Manufacturer_Name 'Infineon'
+PRP Manufacturer_Part_Number 'BGS12WN6E6327XTSA1'
+PRP Mouser_Part_Number '726-BGS12WN6E6327XTS'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Infineon-Technologies/BGS12WN6E6327XTSA1?qs=unwgFEO1A6uim3e4emYLzg%3D%3D'
+TOP 0 56.58440296 115.15700108 0 N 9 2 1
+TOP 1 56.58440296 114.75700188 0 N 27 50 2
+TOP 2 56.58440296 114.35700268 0 N 13 2 3
+TOP 3 56.98440216 114.35700268 0 N 33 18 4
+TOP 4 56.98440216 114.75700188 0 N 30 2 5
+TOP 5 56.98440216 115.15700108 0 N 28 2 6
+#
+# CMP 29
+CMP 11 47.371 108.5342 0 N R301 4k7 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'RC0402JR-070RL'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/rc0402jr-070rl/yageo.html?utm_currency=USD&region=europe'
+PRP Datasheet_Link 'https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf'
+PRP Height '0.4mm'
+PRP Manufacturer_Name 'Yageo Group'
+PRP Manufacturer_Part_Number 'RC0402JR-070RL'
+PRP Mouser_Part_Number '603-RC0402JR-070RL'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/YAGEO/RC0402JR-070RL?qs=5Bml4Cp94iv7ykKkzPrwpQ%3D%3D'
+TOP 0 46.99 108.5342 0 N 25 0 1
+TOP 1 47.752 108.5342 0 N 33 4 2
+#
+# CMP 30
+CMP 11 45.9191995 108.53400188 180 N R300 4k7 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'RC0402JR-070RL'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/rc0402jr-070rl/yageo.html?utm_currency=USD&region=europe'
+PRP Datasheet_Link 'https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf'
+PRP Height '0.4mm'
+PRP Manufacturer_Name 'Yageo Group'
+PRP Manufacturer_Part_Number 'RC0402JR-070RL'
+PRP Mouser_Part_Number '603-RC0402JR-070RL'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/YAGEO/RC0402JR-070RL?qs=5Bml4Cp94iv7ykKkzPrwpQ%3D%3D'
+TOP 0 46.3001995 108.53400188 180 N 26 0 1
+TOP 1 45.5381995 108.53400188 180 N 33 5 2
+#
+# CMP 31
+CMP 11 50.4149995 120.98000188 90 N R201 220 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'RC0402JR-070RL'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/rc0402jr-070rl/yageo.html?utm_currency=USD&region=europe'
+PRP Datasheet_Link 'https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf'
+PRP Height '0.4mm'
+PRP Manufacturer_Name 'Yageo Group'
+PRP Manufacturer_Part_Number 'RC0402JR-070RL'
+PRP Mouser_Part_Number '603-RC0402JR-070RL'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/YAGEO/RC0402JR-070RL?qs=5Bml4Cp94iv7ykKkzPrwpQ%3D%3D'
+TOP 0 50.4149995 121.36100188 90 N 16 0 1
+TOP 1 50.4149995 120.59900188 90 N 24 0 2
+#
+# CMP 32
+CMP 8 29.1338 97.917 0 N L300 10n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://www.digikey.com/en/products/detail/murata-electronics/LQW15DN150M00D/9559544'
+PRP Height '0.7mm'
+PRP Manufacturer_Name 'Murata Electronics'
+PRP Manufacturer_Part_Number 'LQW15DN150M00D'
+PRP Mouser_Part_Number '81-LQW15DN150M00D'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Murata-Electronics/LQW15DN150M00D?qs=55YtniHzbhAjiaw66ArnFg%3D%3D'
+TOP 0 28.6838009 97.917 270 N 31 6 1
+TOP 1 29.5837991 97.917 270 N 21 1 2
+#
+# CMP 33
+CMP 3 59.3344 115.3470007 0 N L204 0_ohm ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://www.digikey.com/en/products/detail/murata-electronics/LQW15DN150M00D/9559544'
+PRP Height '0.7mm'
+PRP Manufacturer_Name 'Murata Electronics'
+PRP Manufacturer_Part_Number 'LQW15DN150M00D'
+PRP Mouser_Part_Number '81-LQW15DN150M00D'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Murata-Electronics/LQW15DN150M00D?qs=55YtniHzbhAjiaw66ArnFg%3D%3D'
+TOP 0 59.0493993 115.3470007 0 N 2 3 1
+TOP 1 59.6194007 115.3470007 0 N 3 5 2
+#
+# CMP 34
+CMP 8 52.8828 115.4938 270 N L203 82n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://www.digikey.com/en/products/detail/murata-electronics/LQW15DN150M00D/9559544'
+PRP Height '0.7mm'
+PRP Manufacturer_Name 'Murata Electronics'
+PRP Manufacturer_Part_Number 'LQW15DN150M00D'
+PRP Mouser_Part_Number '81-LQW15DN150M00D'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Murata-Electronics/LQW15DN150M00D?qs=55YtniHzbhAjiaw66ArnFg%3D%3D'
+TOP 0 52.8828 115.0438009 180 N 10 5 1
+TOP 1 52.8828 115.9437991 180 N 23 5 2
+#
+# CMP 35
+CMP 7 40.1828 123.0376 0 N L201 3u3 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://pim.murata.com/pim/details/?productCategoryId=inductor&partNum=LQM18PN3R3MFC%23'
+PRP Height '0.95mm'
+PRP Manufacturer_Name 'Murata Electronics'
+PRP Manufacturer_Part_Number 'LQM18PN3R3MFCL'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 39.50780008 123.0376 270 N 33 16 1
+TOP 1 40.85779992 123.0376 270 N 32 11 2
+#
+# CMP 36
+CMP 7 42.3418 110.363 180 N L200 15u ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://pim.murata.com/pim/details/?productCategoryId=inductor&partNum=LQM18PN3R3MFC%23'
+PRP Height '0.95mm'
+PRP Manufacturer_Name 'Murata Electronics'
+PRP Manufacturer_Part_Number 'LQM18PN3R3MFCL'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 43.01679992 110.363 90 N 20 1 1
+TOP 1 41.66680008 110.363 90 N 34 6 2
+#
+# CMP 37
+CMP 16 29.464 122.98300016 0 N J100 XT30PB ;0=2,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://www.tme.eu/Document/4acc913878197f8c2e30d4b8cdc47230/XT30UPB%20SPEC.pdf'
+PRP Height '10.7mm'
+PRP Manufacturer_Name 'Amass'
+PRP Manufacturer_Part_Number 'XT30PB'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 29.464 122.98300016 0 N 27 27 1
+TOP 1 29.464 117.983 0 N 5 2 2
+#
+# CMP 38
+CMP 4 28.6258 92.5068 180 N J300 CONUFL001-SMD-T ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'CONUFL001-SMD-T'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/conufl001-smd-t/te-connectivity?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'https://eu.mouser.com/datasheet/2/418/9/ENG_DS_CONUFL001_SMD_T_B-3238717.pdf'
+PRP Height '1.3mm'
+PRP Manufacturer_Name 'TE Connectivity'
+PRP Manufacturer_Part_Number 'CONUFL001-SMD-T'
+PRP Mouser_Part_Number 'N/A'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/TE-Connectivity/CONUFL001-SMD-T?qs=3Rah4i%252BhyCHmRzMH%252BkLkPQ%3D%3D'
+TOP 0 28.6258 94.03180076 90 N 31 5 1
+TOP 1 27.15079914 92.5068 90 N 27 28 2
+TOP 2 30.10080086 92.5068 90 N 27 23 3
+#
+# CMP 39
+CMP 6 51.02860254 104.267 180 N J201 61300511121 ;0=2,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://www.we-online.com/catalog/datasheet/61300511121.pdf'
+PRP Height '8.54mm'
+PRP Manufacturer_Name 'Wurth Elektronik'
+PRP Manufacturer_Part_Number '61300511121'
+PRP Mouser_Part_Number '710-61300511121'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/61300511121?qs=PhR8RmCirEZCsCRHq%252BvfRQ%3D%3D'
+TOP 0 51.02860254 104.267 180 N 33 9 1
+TOP 1 48.48860254 104.267 180 N 8 0 2
+TOP 2 45.94860254 104.267 180 N 27 26 3
+TOP 3 43.40860254 104.267 180 N 7 0 4
+TOP 4 40.86860254 104.267 180 N 15 1 5
+#
+# CMP 40
+CMP 4 63.6778 115.3216007 90 N J200 CONUFL001-SMD-T ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number 'CONUFL001-SMD-T'
+PRP Arrow_Price/Stock 'https://www.arrow.com/en/products/conufl001-smd-t/te-connectivity?utm_currency=USD&region=nac'
+PRP Datasheet_Link 'https://eu.mouser.com/datasheet/2/418/9/ENG_DS_CONUFL001_SMD_T_B-3238717.pdf'
+PRP Height '1.3mm'
+PRP Manufacturer_Name 'TE Connectivity'
+PRP Manufacturer_Part_Number 'CONUFL001-SMD-T'
+PRP Mouser_Part_Number 'N/A'
+PRP Mouser_Price/Stock 'https://www.mouser.co.uk/ProductDetail/TE-Connectivity/CONUFL001-SMD-T?qs=3Rah4i%252BhyCHmRzMH%252BkLkPQ%3D%3D'
+TOP 0 62.15279924 115.3216007 0 N 3 4 1
+TOP 1 63.6778 113.84659984 0 N 27 44 2
+TOP 2 63.6778 116.79660156 0 N 27 46 3
+#
+# CMP 41
+CMP 9 31.9786 105.0798 180 N IC300 MAX-M10M-20B ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://content.u-blox.com/sites/default/files/documents/MAX-M10M-20B_DataSheet_UBXDOC-963802114-13063.pdf'
+PRP Height '2.7mm'
+PRP Manufacturer_Name 'u-blox'
+PRP Manufacturer_Part_Number 'MAX-M10M-20B'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 36.37859882 109.82980066 90 N 27 34 1
+TOP 1 35.27860102 109.82980066 90 N 0 10 2
+TOP 2 34.17860068 109.82980066 90 N 0 11 3
+TOP 3 33.07860034 109.82980066 90 N 0 8 4
+TOP 4 31.9786 109.82980066 90 N 0 9 5
+TOP 5 30.87859966 109.82980066 90 N 32 10 6
+TOP 6 29.77859932 109.82980066 90 N 32 15 7
+TOP 7 28.67859898 109.82980066 90 N 32 16 8
+TOP 8 27.57860118 109.82980066 90 N 32 13 9
+TOP 9 27.57860118 100.32979934 90 N 27 32 10
+TOP 10 28.67859898 100.32979934 90 N 31 4 11
+TOP 11 29.77859932 100.32979934 90 N 27 33 12
+TOP 12 30.87859966 100.32979934 90 N 0 14 13
+TOP 13 31.9786 100.32979934 90 N 1 1 14
+TOP 14 33.07860034 100.32979934 90 N 0 15 15
+TOP 15 34.17860068 100.32979934 90 N 25 1 16
+TOP 16 35.27860102 100.32979934 90 N 26 1 17
+TOP 17 36.37859882 100.32979934 90 N 0 12 18
+#
+# CMP 42
+CMP 3 30.4546 97.536 90 N C306 47n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 30.4546 97.8210007 90 N 21 2 1
+TOP 1 30.4546 97.2509993 90 N 27 24 2
+#
+# CMP 43
+CMP 5 27.6431375 112.4283375 270 N C305 4u7 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 27.6431375 112.19133772 180 N 32 12 1
+TOP 1 27.6431375 112.66533728 180 N 27 29 2
+#
+# CMP 44
+CMP 3 31.67380254 112.4204 90 N C304 1u ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 31.67380254 112.7054007 90 N 27 13 1
+TOP 1 31.67380254 112.1353993 90 N 32 1 2
+#
+# CMP 45
+CMP 3 28.702 112.395 90 N C303 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 28.702 112.6800007 90 N 27 30 1
+TOP 1 28.702 112.1099993 90 N 32 2 2
+#
+# CMP 46
+CMP 3 30.8864 112.41479676 90 N C302 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 30.8864 112.69979746 90 N 27 22 1
+TOP 1 30.8864 112.12979606 90 N 32 3 2
+#
+# CMP 47
+CMP 3 29.7688 112.39500254 90 N C301 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 29.7688 112.68000324 90 N 27 31 1
+TOP 1 29.7688 112.11000184 90 N 32 8 2
+#
+# CMP 48
+CMP 3 31.1658 97.536 90 N C300 10p ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 31.1658 97.8210007 90 N 21 4 1
+TOP 1 31.1658 97.2509993 90 N 27 25 2
+#
+# CMP 49
+CMP 3 53.6956 115.1636 270 N C226 33p ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 53.6956 114.8785993 270 N 10 4 1
+TOP 1 53.6956 115.4486007 270 N 22 1 2
+#
+# CMP 50
+CMP 3 52.4002 116.8146 270 N C222 68n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 52.4002 116.5295993 270 N 23 6 1
+TOP 1 52.4002 117.0996007 270 N 27 37 2
+#
+# CMP 51
+CMP 3 51.7865995 116.81440188 270 N C221 47n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 51.7865995 116.52940118 270 N 23 3 1
+TOP 1 51.7865995 117.09940258 270 N 27 39 2
+#
+# CMP 52
+CMP 3 48.8909995 124.53600188 0 N C220 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 48.6059988 124.53600188 0 N 27 48 1
+TOP 1 49.1760002 124.53600188 0 N 6 1 2
+#
+# CMP 53
+CMP 3 48.3829995 118.05900188 270 N C219 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 48.3829995 117.77400118 270 N 34 1 1
+TOP 1 48.3829995 118.34400258 270 N 27 52 2
+#
+# CMP 54
+CMP 5 48.4124 119.253 270 N C218 4u7 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 48.4124 119.01600022 180 N 34 8 1
+TOP 1 48.4124 119.48999978 180 N 27 41 2
+#
+# CMP 55
+CMP 3 49.2719995 118.05900188 270 N C217 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 49.2719995 117.77400118 270 N 33 14 1
+TOP 1 49.2719995 118.34400258 270 N 27 40 2
+#
+# CMP 56
+CMP 3 43.1292 111.6076 270 N C216 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 43.1292 111.3225993 270 N 33 7 1
+TOP 1 43.1292 111.8926007 270 N 27 57 2
+#
+# CMP 57
+CMP 3 41.84085358 112.97900188 0 N C214 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 41.55585288 112.97900188 0 N 27 17 1
+TOP 1 42.12585428 112.97900188 0 N 33 12 2
+#
+# CMP 58
+CMP 3 46.6344 117.6782 0 N C208 10p ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 46.3493993 117.6782 0 N 27 67 1
+TOP 1 46.9194007 117.6782 0 N 6 0 2
+#
+# CMP 59
+CMP 5 49.0179995 108.78800188 180 N C207 4u7 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 49.25499928 108.78800188 90 N 33 22 1
+TOP 1 48.78099972 108.78800188 90 N 27 63 2
+#
+# CMP 60
+CMP 5 49.2719995 119.45600188 270 N C206 4u7 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 49.2719995 119.2190021 180 N 33 17 1
+TOP 1 49.2719995 119.69300166 180 N 27 49 2
+#
+# CMP 61
+CMP 3 50.2879995 108.78800188 180 N C205 100n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 50.5730002 108.78800188 180 N 27 68 1
+TOP 1 50.0029988 108.78800188 180 N 33 20 2
+#
+# CMP 62
+CMP 3 50.4149995 119.58300188 90 N C204 10p ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 50.4149995 119.86800258 90 N 24 1 1
+TOP 1 50.4149995 119.29800118 90 N 14 0 2
+#
+# CMP 63
+CMP 3 42.2656 109.4994 0 N C203 470n ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 41.9805993 109.4994 0 N 34 7 1
+TOP 1 42.5506007 109.4994 0 N 27 18 2
+#
+# CMP 64
+CMP 5 41.4782 111.62460022 270 N C202 4u7 ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 41.4782 111.38760044 180 N 33 8 1
+TOP 1 41.4782 111.8616 180 N 27 16 2
+#
+# CMP 65
+CMP 3 41.656 121.8946 270 N C201 220p ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 41.656 121.6095993 270 N 27 61 1
+TOP 1 41.656 122.1796007 270 N 32 14 2
+#
+# CMP 66
+CMP 3 40.6202007 121.5644 180 N C200 220p ;0=1,1=0.0000,5=0
+PRP Arrow_Part_Number ''
+PRP Arrow_Price/Stock ''
+PRP Datasheet_Link 'https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf'
+PRP Height '0.22mm'
+PRP Manufacturer_Name 'TDK'
+PRP Manufacturer_Part_Number 'C0402X7R0G101K020BC'
+PRP Mouser_Part_Number ''
+PRP Mouser_Price/Stock ''
+TOP 0 40.9052014 121.5644 180 N 27 55 1
+TOP 1 40.3352 121.5644 180 N 33 6 2
+#

@@ -1,0 +1,34 @@
+UNITS=MM
+THICKNESS=0
+USER_PARAMS=
+
+TOOLS {
+    NUM=1
+    TYPE=VIA
+    MIN_TOL=0
+    MAX_TOL=0
+    BIT=
+    FINISH_SIZE=203.2
+    DRILL_SIZE=203.2
+}
+
+TOOLS {
+    NUM=2
+    TYPE=VIA
+    MIN_TOL=0
+    MAX_TOL=0
+    BIT=
+    FINISH_SIZE=254
+    DRILL_SIZE=254
+}
+
+TOOLS {
+    NUM=3
+    TYPE=VIA
+    MIN_TOL=0
+    MAX_TOL=0
+    BIT=
+    FINISH_SIZE=711.2
+    DRILL_SIZE=711.2
+}
+

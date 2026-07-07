@@ -1,0 +1,172 @@
+*************************************************************
+FileName = PCB1.PcbDoc
+ODB++ directory structure
+*************************************************************
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\profile
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\stephdr
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_overlay\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_overlay\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\dielectric_2\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\dielectric_2\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\dielectric_1\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\dielectric_1\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\dielectric_3\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\dielectric_3\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_overlay\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_overlay\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_paste\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_paste\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_non-plated_bottom_layer-top_layer\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_non-plated_bottom_layer-top_layer\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_non-plated_bottom_layer-top_layer\tools
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_paste\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_paste\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_type_2b\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_type_2b\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_type_2b\tools
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\keep-out_layer\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\keep-out_layer\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_type_1a_top\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_type_1a_top\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_type_1a_top\tools
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\mechanical_1\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\mechanical_1\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_type_2a_top\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_type_2a_top\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_type_2a_top\tools
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\capping\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\capping\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_tenting\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_tenting\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_covering\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_covering\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_covering\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_covering\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\filling\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\filling\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_solder\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_solder\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_tenting\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_tenting\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_solder\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_solder\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_plated_bottom_layer-top_layer\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_plated_bottom_layer-top_layer\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_plated_bottom_layer-top_layer\tools
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_drawing_type_2b\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_drawing_type_2b\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\gnd2\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\gnd2\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_guide_type_1a_top\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_guide_type_1a_top\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\mechanical_13\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\mechanical_13\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\gnd1\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\gnd1\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\mechanical_15\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\mechanical_15\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_guide_type_2b\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_guide_type_2b\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_drawing_type_2a_top\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_drawing_type_2a_top\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_drawing_type_1a_top\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_drawing_type_1a_top\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_guide_type_2a_top\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_guide_type_2a_top\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_layer\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\bottom_layer\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_guide_top_layer-bottom_layer\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_guide_top_layer-bottom_layer\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_layer\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\top_layer\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_drawing_top_layer-bottom_layer\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\drill_drawing_top_layer-bottom_layer\attrlist
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\comp_+_top\features
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\layers\comp_+_top\components
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\steps\pcb\eda\data
+
+Generated File : C:\Users\Public\Documents\Altium\HEARD\ODB++ OUTPUTS HEARD\odb\matrix\matrix
+
