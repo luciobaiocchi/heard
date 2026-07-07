@@ -94,6 +94,12 @@ code/
     ├── mocks/            Arduino / FreeRTOS / LoRa mocks for host compilation
     └── web/              MapLibre 3D replay viewer (ES modules, no build step)
 images/                   Figures
+PCB V1/   Version 1 of the PCB design
+├──EM SIMULATION FILES/   EM simulations of the RF sections of the PCB and their CST files
+├──GERBER FILES/    GERBER outputs for the project
+├──ODB++ FILES/   ODB++ outputs for the project
+├──SCHEMATICS.pdf
+├──HEARD_BOM.xlsx/  Detailed Bill of Materials with Vendor choises
 HEARD_PROJECT.md          Comprehensive project description
 ```
 
@@ -105,6 +111,61 @@ The 3D-printable enclosure files are available as a GitHub Release: **[Core encl
 
 ![Product concept renders](images/mokup.jpg)
 *Product concept: Heard Core / Node handhelds and the button-sized Heard Pico for children.*
+
+> **New Hardware** Since the on-board Radio is not being used we are trying to move away from the ESP architecture to an ARM based STM32 based architecture with LoRa builtin like the STM32WL series of chips along with their IPD.
+
+<p align="center">
+  <img src="images/PCBV1_2D.png" width="46%" alt="2D view of the PCB" />
+  <img src="images/PCBV1_3D_ill.png" width="46%" alt="3D view of the PCB with key components marked" />
+</p>
+<p align="center"><em>The Heard PCB prototype: 2D view of the PCB (left) and 3D view of the same with key compoenents marked(right)</em></p>
+
+## Hardware: PCB V1 (Alpha Release)
+
+The first physical iteration (**V1**) of the HEARD tracker board is now complete, packing both long-range communication and high-accuracy positioning into a compact ultra-small form factor. We are inviting hardware engineers, radio enthusiasts, and makers to review the design, order test prints, and share their physical testing telemetry.
+
+### 📡 Salient Hardware Features
+* **Dimensions:** Ultra-compact 40.97 mm × 38.13 mm footprint.
+* **Core Silicon:**
+  * **MCU/LoRa:** STMicroelectronics `STM32WLE5CCU6` (System-on-Chip with integrated LoRa sub-GHz transceiver).
+  * **GNSS/GPS:** u-blox `MAX-M10M-00B` featuring an integrated Low Noise Amplifier (LNA) and SAW filter for rapid, high-sensitivity positioning lock.
+* **Passives:** Optimized for space; using mostly metric 0402 (imperial 01005) passives, with critical components scaling to imperial 0402 where required.
+
+---
+
+### 🎛️ Layer Stackup & RF Coplanar Waveguides
+The board utilizes a standard **PCBWay 4-layer 1.6mm stackup** optimized for consistent 50Ω RF performance.
+
+| Layer | Type | Material | Thickness | Dk (Dielectric Constant) |
+|---|---|---|---|---|
+| **Top** | Copper (Signal/RF) | 1 oz | 0.0175 mm | — |
+| *Dielectric* | Prepreg (PP) | — | 0.1855 mm | 4.74 |
+| **Inner 1** | Copper (GND Plane) | 1 oz | 0.0350 mm | — |
+| *Dielectric* | Core | — | 1.0300 mm | 4.60 |
+| **Inner 2** | Copper (GND Plane) | 1 oz | 0.0350 mm | — |
+| *Dielectric* | Prepreg (PP) | — | 0.1855 mm | 4.74 |
+| **Bottom** | Copper (Signal) | 1 oz | 0.0175 mm | — |
+
+#### Controlled Impedance Profiles (Grounded Coplanar Waveguide)
+All high-frequency RF sections have been tightly modeled for impedance continuity:
+* **Single-Ended 50Ω (Antennas & IPD Output):** 11.578 mil trace width / 10.0 mil copper clearance gap.
+* **Single-Ended 57Ω (IPD Input Match):** 8.962 mil trace width / 10.0 mil copper clearance gap.
+* **Differential 100Ω (LoRa RX Diff Pair):** $Z_0$ = 61Ω, $Z_{\text{diff}}$ = 106Ω, $Z_{\text{even}}$ = 70Ω. Designed with 7.771 mil trace widths, a 7.987 mil intra-pair gap, and 10.0 mil copper clearance to ground.
+
+---
+
+> ⚠️ **RF Simulation Note:** Due to compute limitations, cross-talk/isolation simulations between the active LoRa and GPS front-ends have not yet been run simultaneously. If you have access to a heavy simulation cluster and want to contribute a coupled EM analysis, please reach out!
+
+---
+
+### 🛠️ Call to Action: Help Us Test V1!
+We need real-world data. If you are looking to spin a high-performance tracking board, feel free to use these manufacturing files to order prototypes from your favorite fab. 
+
+**How you can contribute:**
+1. **Fab & Assemble:** Order the PCB using the ODB++ or Gerber data, source parts via the BOM, and build a prototype.
+2. **RF Verification:** If you have access to a VNA (Vector Network Analyzer), verify our trace impedances and return loss against the `COMBED.pdf` baseline simulation.
+3. **Firmware Integration:** Flash test routines to evaluate the u-blox MAX-M10M cold-start times alongside active LoRa transmissions.
+4. **Give Feedback:** Open an Issue or Pull Request with your findings, assembly notes, or suggested layout changes for the upcoming V2 revision!
 
 ### PCB sponsor
 
